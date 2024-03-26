@@ -1,0 +1,115 @@
+
+@font-face {
+    font-family: myFirstFont;
+    src: url(./resource/Norse-Bold.otf);
+  }
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100%;
+    background-color: black;
+}
+.main-container{
+    width: 60%;
+    height: 100vh;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 40% 60%;
+}
+.left-container{
+    background-image: url("./resource/halie-west-25xggax4bSA-unsplash.jpg");
+    background-size: cover;
+    color: white;
+    position: relative;
+}
+.right-container{
+    background-color: whitesmoke;
+    color: black;
+}
+
+.transparent-container{
+    background-color: rgba(0,0,0,0.4);
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 50%;
+    padding: 1rem 0;
+}
+.transparent-container h1{
+    display: inline;
+    z-index: 1;
+    margin-left: 0.8rem;
+    font-family: myFirstFont;
+}
+.photo-credit{
+    width: 100%;
+    position: absolute;
+    text-align: center;
+    bottom: 5px;
+    font-size: smaller;
+}
+.photo-credit a{
+    color: whitesmoke;
+}
+.intro-container{
+    padding: 6rem 4.5rem 1rem 2rem;
+    font-family: "Roboto", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+  }
+.intro-container > p{
+    margin-bottom: 1rem;
+}
+.form-container{
+    background-color: white;
+   padding: 1rem 2rem 2rem 2rem;
+   box-shadow: 0 15px 15px -20px rgba(0,0, 0, 0.45);
+}
+label{
+    display: block;
+    margin-bottom: 0.2rem;
+    font-size: xx-small;
+    font-weight: bold;
+    letter-spacing: 0.1rem;
+}
+form{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1rem 4rem;
+    margin-top: 1rem;
+}
+button{
+    margin: 2rem 2rem 0.8rem 2rem;
+    background-color: #596D48;
+    color: white;
+    padding: 0.5rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-size: medium;
+    font-weight: bold;
+}
+.sign-in{
+    margin-left: 2rem;
+    font-size: small;
+}
+.sign-in a{
+    color: #596D48;
+    text-decoration: none;
+    font-weight: bold;
+}
+input{
+    border-radius: 5px;
+    padding: 0.2rem;
+    border: 1px solid #E5E7EB;
+}
+.focus-input:focus{
+    border: 2px solid #3636dd;
+    outline: none;
+    box-shadow: 3px 0px 20px -5px rgba(155,155,155,1);
+}
