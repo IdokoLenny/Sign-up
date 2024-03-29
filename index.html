@@ -64,9 +64,10 @@
                         <label for="phone">PHONE NUMBER</label>
                         <input type="tel" id="phone" name="phone" class="focus-input">
                     </div>
-                    <div>
+                    <div class="password-container">
                         <label for="password">PASSWORD</label>
                         <input type="password" name="password" id="password" class="focus-input">
+                        <p class="info"></p>
                     </div>
                     <div>
                         <label for="c-password">CONFIRM PASSWORD</label>
@@ -78,5 +79,48 @@
             <p class="sign-in">Already have an account? <a href="#">Log in</a></p>
         </div>
     </div>
+
+    <script>
+        let password=document.querySelector("#password")
+        let c_password=document.querySelector("#c-password")
+        let container=document.querySelector(".password-container")
+        let info=document.querySelector(".info")
+        let btn=document.querySelector("button")
+        
+        btn.addEventListener("click", () => {
+            if (password.value != c_password.value){
+                info.textContent="*password do not match"
+                password.style.cssText="border: 1px solid red; outline: none; box-shadow: 3px 0px 20px -5px rgba(155,155,155,1);"
+                c_password.style.cssText="border: 1px solid red; outline: none; box-shadow: 3px 0px 20px -5px rgba(155,155,155,1);"
+                info.style.cssText="color: red; font-size: 0.7rem;"
+                password.value=""
+                c_password.value=""
+            }
+            else{
+                info.textContent=""
+                password.value=""
+                c_password.value=""
+                password.style.cssText="border: 1px solid #E5E7EB;"
+                c_password.style.cssText="border: 1px solid #E5E7EB;"
+            }
+        })
+
+        password.addEventListener("focus", (e) => {
+            e.target.style.cssText="border: 2px solid #3636dd; outline: none;box-shadow: 3px 0px 20px -5px rgba(155,155,155,1);"
+        });
+
+        // Remove the box shadow when the user doesn't focus anymore
+        password.addEventListener("blur", (e) => {
+            e.target.style.cssText="border: 1px solid #E5E7EB;"
+        });
+        c_password.addEventListener("focus", (e) => {
+            e.target.style.cssText="border: 2px solid #3636dd; outline: none;box-shadow: 3px 0px 20px -5px rgba(155,155,155,1);"
+        });
+
+        // Remove the box shadow when the user doesn't focus anymore
+        c_password.addEventListener("blur", (e) => {
+            e.target.style.cssText="border: 1px solid #E5E7EB;"
+        });
+    </script>
 </body>
 </html>
